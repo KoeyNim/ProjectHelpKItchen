@@ -1,0 +1,150 @@
+@charset "UTF-8";
+.login_header {
+	height: 20vh;
+}
+.login-form {
+	width: 400px;
+	margin: 10vh auto;
+}
+.login-form h1 {
+	font-size: 32px;
+	text-align: center;
+	margin-bottom: 30px;
+}
+.int-area {
+	width: 400px; 
+	position: relative;
+	margin: 20px;
+}
+.int-area input{
+	width: 80%;
+	padding: 20px 10px 10px;
+	border: none;
+	border-bottom: 1px solid #999;
+	font-size: 20px;
+	outline: none;
+}
+.btn-area {
+	margin-top: 60px;
+}
+.btn-area button {
+	width: 100%; height: 40px;
+	background: #ffc107;
+	font-size: 20px;
+	border: none;
+	border-radius: 0.25rem;
+	margin-bottom: 20px;
+	cursor: pointer;
+}
+.question h5{
+	font-size: 16px;
+}
+.message {
+	color: gray;
+}
+.introduce p {
+	font-size: 12px;
+}
+.agree_form {
+	margin: 5vh auto;
+	width: 500px;
+}
+.agree_form h2,
+.login-form h2 {
+	text-align: center;
+}
+.agree_form textarea {
+	font-size: 15px;
+}
+.agree {
+	width: 200px; 
+	height: 40px;
+	margin: 10px 20px;
+	background: #ffc107;
+	font-size: 20px;
+	border: none;
+	border-radius: 0.25rem;
+	cursor: pointer;
+}
+.checkMsg {
+	margin-top: 10px; 
+	text-align: center; 
+	color: #FF0000; 
+	display: none;
+}
+.d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top {
+  	position: sticky;
+}
+.img-thumbnail {
+	border: 1px solid #fff;
+}
+ul .nav justify-content-center {
+	background-color: red;
+}
+
+/* swiper styles */
+html, body {
+	position: relative;
+	height: 100%;
+}
+
+body {
+	background: #eee;
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	color: #000;
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	position: relative;
+	height: 100%;
+	background-color: #fff;
+}
+
+body {
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	color: #000;
+	margin: 0;
+	padding: 0;
+}
+
+.swiper {
+	width: 70%;
+	height: 25%;
+}
+.swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	background: #fff;
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+.swiper-slide img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.main_btn button {
+	width: 130px; height: 40px;
+	background: #ffc107;
+	font-size: 20px;
+	border: none;
+	border-radius: 1.25rem;
+	margin-bottom: 20px;
+	cursor: pointer;
+}
