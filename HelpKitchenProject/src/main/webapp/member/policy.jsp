@@ -420,8 +420,8 @@
       	<input type="checkbox" id="14yCheck" value="1">
 	</p>
       <p style="text-align: center;">
-      <button type="button" class="agree" onclick="location.href='login.jsp'">동의</button>
-      <button type="button" class="agree" onclick="location.href=" >비동의</button>
+	  <button type="button" class="agree" onclick="location.href='HelpkitchenServlet?command=member_join_form'">동의</button>
+      <button type="button" class="agree" onclick="location.href='history.back()'" >비동의</button>
       </p>
       </div>
       </div>

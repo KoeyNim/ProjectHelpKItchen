@@ -12,7 +12,8 @@
 
 	<div class="login-form">
 		<h2>비밀번호 찾기</h2>
-		<form action="" method="post" name="">
+		<form action="HelpkitchenServlet" method="post" name="">
+		<input type="hidden" name="command" value="member_find_password">
 			<div class="int-area">
 				<input type="text" name="mEmail" placeholder="이메일" required />
 			</div>

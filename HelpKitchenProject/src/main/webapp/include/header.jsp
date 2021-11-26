@@ -28,7 +28,7 @@
       <button class="btn btn-outline-success" type="submit">Search</button>
      </form>
       	<div class="btn-area2">
-		<button type="submit" value="로그인" onclick="location.href=">로그인</button>
+		<button type="submit" value="로그인" onclick="location.href='HelpkitchenServlet?command=member_login_form'">로그인</button>
 		</div>
 		<div class="btn-area2">
 		<button type="submit" value="회원가입" onclick="location.href=">레시피 작성</button>

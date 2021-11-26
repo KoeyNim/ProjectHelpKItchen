@@ -1,41 +1,39 @@
 package com.helpkitchen.dto;
 
 public class MemberVO {
-	int num;
-	String id;
-	String password;
-	String nickName;
-	String email;
-	public int getNum() {
-		return num;
+	private int mNum;
+	private String mId;
+	private String mPassword;
+	private String mNickName;
+	private String mEmail;
+	public int getmNum() {
+		return mNum;
 	}
-	public void setNum(int num) {
-		this.num = num;
+	public void setmNum(int mNum) {
+		this.mNum = mNum;
 	}
-	
-	public String getId() {
-		return id;
+	public String getmId() {
+		return mId;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setmId(String mId) {
+		this.mId = mId;
 	}
-	
-	public String getPassword() {
-		return password;
+	public String getmPassword() {
+		return mPassword;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setmPassword(String mPassword) {
+		this.mPassword = mPassword;
 	}
-	public String getNickName() {
-		return nickName;
+	public String getmNickName() {
+		return mNickName;
 	}
-	public void setNickName(String nickName) {
-		this.nickName = nickName;
+	public void setmNickName(String mNickName) {
+		this.mNickName = mNickName;
 	}
-	public String getEmail() {
-		return email;
+	public String getmEmail() {
+		return mEmail;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setmEmail(String mEmail) {
+		this.mEmail = mEmail;
 	}
 }

@@ -11,7 +11,7 @@ public class MemberLoginFormAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/member/memberLogin.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/member/login.jsp");
 		dispatcher.forward(request, response);
 		
 	}
