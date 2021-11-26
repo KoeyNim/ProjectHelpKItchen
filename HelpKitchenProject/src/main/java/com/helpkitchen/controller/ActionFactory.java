@@ -1,13 +1,15 @@
 package com.helpkitchen.controller;
 
 import com.helpkitchen.controller.action.Action;
-import com.helpkitchen.controller.action.MemberPolicyFormAction;
+import com.helpkitchen.controller.action.BoardWriteFormAction;
 import com.helpkitchen.controller.action.MemberFindPassAction;
 import com.helpkitchen.controller.action.MemberFindPassFormAction;
 import com.helpkitchen.controller.action.MemberJoinAction;
 import com.helpkitchen.controller.action.MemberJoinFormAction;
 import com.helpkitchen.controller.action.MemberLoginAction;
 import com.helpkitchen.controller.action.MemberLoginFormAction;
+import com.helpkitchen.controller.action.MemberLogoutAction;
+import com.helpkitchen.controller.action.MemberPolicyFormAction;
 
 public class ActionFactory {
 
@@ -39,6 +41,10 @@ public class ActionFactory {
 			action = new MemberFindPassFormAction();
 		} else if (command.equals("member_find_password")) {
 			action = new MemberFindPassAction();
+		} else if (command.equals("member_logout")) {
+			action = new MemberLogoutAction();
+		} else if (command.equals("board_write_form")) {
+			action = new BoardWriteFormAction();
 		}
 		return action;
 	}

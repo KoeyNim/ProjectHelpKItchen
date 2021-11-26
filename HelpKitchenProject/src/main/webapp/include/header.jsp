@@ -27,12 +27,23 @@
       <input class="form-control me-4" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success" type="submit">Search</button>
      </form>
+     
+     <c:choose>
+<c:when test="${mVo == null}">
+<!-- 로그인이 되어있지 않는 경우 -->
       	<div class="btn-area2">
-		<button type="submit" value="로그인" onclick="location.href='HelpkitchenServlet?command=member_login_form'">로그인</button>
+		<button value="로그인" onclick="location.href='HelpkitchenServlet?command=member_login_form'">로그인</button>
+		<button value="레시피 작성" onclick="location.href='HelpkitchenServlet?command=member_login_form'">레시피 작성</button>
 		</div>
-		<div class="btn-area2">
-		<button type="submit" value="회원가입" onclick="location.href=">레시피 작성</button>
-		</div>
-  </div>
+ </c:when>
+ <c:when test="${mVo != null}">
+<!-- 로그인이 되어있는경우 나오는 화면  -->
+	<div class="btn-area2">
+	<button value="로그아웃" onclick="location.href='HelpkitchenServlet?command=member_logout'">로그아웃</button>
+	<button value="레시피 작성" onclick="location.href='HelpkitchenServlet?command=board_write_form'">레시피 작성</button>
+	 </div>
+ </c:when>
+</c:choose>
+ 
 </nav>
 
