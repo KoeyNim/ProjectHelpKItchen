@@ -39,7 +39,6 @@ public class MemberJoinAction implements Action {
 			request.setAttribute("mPassword", password);
 			request.setAttribute("mNickName", nickName);
 			request.setAttribute("mEmail", email);
-			System.out.println("id영역" + resultId);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/member/join.jsp");
 			dispatcher.forward(request, response);
 		}else if(resultEmail < 0) {
@@ -47,7 +46,6 @@ public class MemberJoinAction implements Action {
 			request.setAttribute("mId", id);
 			request.setAttribute("mPassword", password);
 			request.setAttribute("mNickName", nickName);
-			System.out.println("email영역" + resultEmail);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/member/join.jsp");
 			dispatcher.forward(request, response);
 		}
