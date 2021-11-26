@@ -24,7 +24,7 @@
 
 <div id="Rankingimage">
 <!-- 슬라이드사진 -->
-
+</div>
 <%@ include file="../include/footer.jsp"%>
 </body>
 </html>

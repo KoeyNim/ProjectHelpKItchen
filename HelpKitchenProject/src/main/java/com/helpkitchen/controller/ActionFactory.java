@@ -1,17 +1,20 @@
 package com.helpkitchen.controller;
 
 import com.helpkitchen.controller.action.Action;
-import com.helpkitchen.controller.action.BoardViewAction;
-import com.helpkitchen.controller.action.BoardWriteAction;
-import com.helpkitchen.controller.action.BoardWriteFormAction;
-import com.helpkitchen.controller.action.MemberFindPassAction;
-import com.helpkitchen.controller.action.MemberFindPassFormAction;
-import com.helpkitchen.controller.action.MemberJoinAction;
-import com.helpkitchen.controller.action.MemberJoinFormAction;
-import com.helpkitchen.controller.action.MemberLoginAction;
-import com.helpkitchen.controller.action.MemberLoginFormAction;
-import com.helpkitchen.controller.action.MemberLogoutAction;
-import com.helpkitchen.controller.action.MemberPolicyFormAction;
+import com.helpkitchen.controller.action.board.BoardViewAction;
+import com.helpkitchen.controller.action.board.BoardWriteAction;
+import com.helpkitchen.controller.action.board.BoardWriteFormAction;
+import com.helpkitchen.controller.action.member.MemberFindPassAction;
+import com.helpkitchen.controller.action.member.MemberFindPassFormAction;
+import com.helpkitchen.controller.action.member.MemberJoinAction;
+import com.helpkitchen.controller.action.member.MemberJoinFormAction;
+import com.helpkitchen.controller.action.member.MemberLoginAction;
+import com.helpkitchen.controller.action.member.MemberLoginFormAction;
+import com.helpkitchen.controller.action.member.MemberLogoutAction;
+import com.helpkitchen.controller.action.member.MemberPolicyFormAction;
+import com.helpkitchen.controller.action.help.HelpKitchenCategoriesAction;
+import com.helpkitchen.controller.action.help.HelpKitchenMainAction;
+import com.helpkitchen.controller.action.help.HelpKitchenRankingAction;
 
 public class ActionFactory {
 
@@ -27,7 +30,13 @@ public class ActionFactory {
 
 	public Action getAction(String command) {
 		Action action = null;
-		if (command.equals("member_login")) {
+		if (command.equals("help_main")) {
+			action = new HelpKitchenMainAction();
+		} else if (command.equals("help_categories")) {
+			action = new HelpKitchenCategoriesAction();
+		} else if (command.equals("help_Ranking")) {
+			action = new HelpKitchenRankingAction();
+		} else if (command.equals("member_login")) {
 			action = new MemberLoginAction();
 		} else if (command.equals("member_login_form")) {
 			action = new MemberLoginFormAction();

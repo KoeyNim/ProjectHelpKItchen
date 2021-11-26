@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>메인, 분류</title>
-<link rel="stylesheet" type="text/css" href="../css/Kategoriedesign.css">
+<link rel="stylesheet" type="text/css" href="../css/Categoriedesign.css">
 </head>
 <body>
 
@@ -57,11 +57,12 @@
 </div>
 
 <br>
-<p>총<p1 class=text>111,111</p1>개의 맛있는 레시피가 있습니다.</p>
+<p>총<p1 class="text">111,111</p1>개의 맛있는 레시피가 있습니다.</p>
 <br>
 
 <div id="Recipeimage">
 <!-- 슬라이드사진 -->
+</div>
 
 <%@ include file="../include/footer.jsp"%>
 </body>

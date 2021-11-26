@@ -1,4 +1,4 @@
-package com.helpkitchen.controller.action;
+package com.helpkitchen.controller.action.member;
 
 import java.io.IOException;
 
@@ -7,12 +7,15 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class MemberLoginFormAction implements Action {
+import com.helpkitchen.controller.action.Action;
+
+public class MemberJoinFormAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/member/login.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/member/join.jsp");
 		dispatcher.forward(request, response);
-		
+
 	}
+
 }

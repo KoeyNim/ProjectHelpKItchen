@@ -1,4 +1,4 @@
-package com.helpkitchen.controller.action;
+package com.helpkitchen.controller.action.member;
 
 import java.io.IOException;
 
@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.helpkitchen.controller.action.Action;
 import com.helpkitchen.dao.HelpkitchenDAO;
 import com.helpkitchen.dto.MemberVO;
 
