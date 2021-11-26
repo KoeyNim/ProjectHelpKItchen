@@ -12,6 +12,8 @@
 <body>
 <h2>레시피 등록</h2>
 <form name="register" action="" method="post" enctype="multipart/form-data">
+	<input type="hidden" name="command" value="member_login">
+	<input type="hidden" name="mId" value="${mVo.mId}">
    <table class="table">
         <tr>
             <td>레시피 제목</td>

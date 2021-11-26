@@ -3,7 +3,12 @@ package com.helpkitchen.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
+import com.helpkitchen.dto.BoardVO;
 import com.helpkitchen.dto.MemberVO;
 
 import util.DBConnector;
@@ -187,5 +192,172 @@ public class HelpkitchenDAO {
 		return result;
 	}
 
+	// 11/23 이민혁 최신순으로 게시글 보기
+	public List<BoardVO> selectAllBoards() {
+		String sql = "select * from board order by b_num desc";
+		
+		List<BoardVO> list = new ArrayList<>();
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		
+		try {
+			conn = DBConnector.getConnection();
+			stmt = conn.createStatement();
+			
+			rs = stmt.executeQuery(sql);
+			
+			while (rs.next()) {
+				BoardVO bVo = new BoardVO();
+				
+				bVo.setbNum(rs.getLong("b_num"));
+				bVo.setbNickName(rs.getString("b_nickName"));
+				bVo.setbTitle(rs.getString("b_title"));
+				bVo.setbContent(rs.getString("b_content"));
+				bVo.setbCredat(rs.getString("b_credat"));
+				bVo.setbHashTag(rs.getString("b_hashTag"));
+				bVo.setbVote(rs.getLong("b_vote"));
+				bVo.setbViews(rs.getLong("b_views"));
+				bVo.setbImage(rs.getBytes("b_image"));
+				
+				list.add(bVo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBConnector.close(conn, stmt);
+		}
+		return list;
+	}
+	
+	// 11/23 이민혁 데이터 입력 B_nickName 수정해야 함.
+	public void insertBoard(BoardVO bVo) {
+		String sql = "INSERT INTO board(B_NUM, B_NICKNAME, B_TITLE, B_CONTENT, B_HASHTAG) "
+				+ "values(sql_board.nextval, 'TestNN', ?, ?, ?)";
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			conn = DBConnector.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			
+//			pstmt.setString(1, bVo.getbNickName());
+			pstmt.setString(1, bVo.getbTitle());
+			pstmt.setString(2, bVo.getbContent());
+			pstmt.setString(3, bVo.getbHashTag());
+			
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBConnector.close(conn, pstmt);
+		}
+	}
+	
+	// 11/23 이민혁
+	public void updateViews(String bNum) {
+		String sql = "update board set views=views+1 where b_num=?";
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			conn = DBConnector.getConnection();
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, bNum);
+			
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBConnector.close(conn, pstmt);
+		}
+	}
+	
+	// 11/23 게시판 글 상세보기
+	public BoardVO selectOneBoardByNum(String bNum) {
+		String sql = "select * from board where b_num = ?";
+		
+		BoardVO bVo = null;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			conn = DBConnector.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, bNum);
+			
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				bVo = new BoardVO();
+				
+				bVo.setbNum(rs.getLong("b_num"));
+				bVo.setbNickName(rs.getString("b_nickName"));
+				bVo.setbTitle(rs.getString("b_title"));
+				bVo.setbContent(rs.getString("b_content"));
+				bVo.setbCredat(rs.getString("b_credat"));
+				bVo.setbHashTag(rs.getString("b_hashTag"));
+				bVo.setbVote(rs.getLong("b_vote"));
+				bVo.setbViews(rs.getLong("b_views"));
+				bVo.setbImage(rs.getBytes("b_image"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBConnector.close(conn, pstmt, rs);
+		}
+		return bVo;
+	}
+	
+	// 11/23 이민혁 게시글 수정
+	public void updateBoard(BoardVO bVo) {
+		String sql = "update board set b_title=?, b_content=?, b_hashTag=?, b_image=? where b_num=?";
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			conn = DBConnector.getConnection();
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, bVo.getbTitle());
+			pstmt.setString(2, bVo.getbContent());
+			pstmt.setString(3, bVo.getbHashTag());
+			pstmt.setBytes(4, bVo.getbImage());
+			pstmt.setLong(5, bVo.getbNum());
+			
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBConnector.close(conn, pstmt);
+		}
+	}
+	
+	// 11/23 이민혁 게시글 삭제
+	public void deleteBoard(String bNum) {
+		String sql = "delete board where b_num=?";
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			conn = DBConnector.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, bNum);
+			
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBConnector.close(conn, pstmt);
+		}
+	}
 	
 }

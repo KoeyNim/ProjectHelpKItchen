@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class DBConnector {
 
@@ -24,7 +25,16 @@ public class DBConnector {
 		return con;
 	}
 
-	public static void close(Connection conn, PreparedStatement stmt, ResultSet rs) {
+	public static void close(Connection conn, PreparedStatement pstmt, ResultSet rs) {
+		try {
+			rs.close();
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public static void close(Connection conn, Statement stmt, ResultSet rs) {
 		try {
 			rs.close();
 			stmt.close();
@@ -34,7 +44,15 @@ public class DBConnector {
 		}
 	}
 
-	public static void close(Connection conn, PreparedStatement stmt) {
+	public static void close(Connection conn, PreparedStatement pstmt) {
+		try {
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public static void close(Connection conn, Statement stmt) {
 		try {
 			stmt.close();
 			conn.close();
