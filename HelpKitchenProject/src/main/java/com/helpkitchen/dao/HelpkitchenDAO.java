@@ -191,6 +191,26 @@ public class HelpkitchenDAO {
 		}
 		return result;
 	}
+	
+	public void newPassword(String password, String email) {
+		String sql = "UPDATE member SET m_password=? WHERE m_email=?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try {
+			conn = DBConnector.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, password);
+			pstmt.setString(2, email);
+
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBConnector.close(conn, pstmt);
+		}
+
+	}
 
 	// 11/23 이민혁 최신순으로 게시글 보기
 	public List<BoardVO> selectAllBoards() {
