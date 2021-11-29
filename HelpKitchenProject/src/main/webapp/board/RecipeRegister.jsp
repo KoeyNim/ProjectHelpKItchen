@@ -11,9 +11,16 @@
 </head>
 <body>
 <h2>레시피 등록</h2>
+<form name="frm" action="HelpkitchenServlet" method="post">
+	<input type="hidden" name="command" value="board_write">
+	제목 : <input type="text" name="bTitle" size=30><br>
+	내용 : <input type="text" name="bContent" size=30><br>
+	해시태그 : <input type="text" name="bHashTag" size=30><br>
+	<input class="btn2" type="submit" value="저장">
+	<input class="btn4" type="reset" value="취소">
+</form>
 <form name="register" action="" method="post" enctype="multipart/form-data">
 	<input type="hidden" name="command" value="member_login">
-	<input type="hidden" name="mId" value="${mVo.mId}">
    <table class="table">
         <tr>
             <td>레시피 제목</td>

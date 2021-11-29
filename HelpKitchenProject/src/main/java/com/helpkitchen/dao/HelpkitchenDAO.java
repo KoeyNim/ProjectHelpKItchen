@@ -230,10 +230,11 @@ public class HelpkitchenDAO {
 		return list;
 	}
 	
-	// 11/23 이민혁 데이터 입력 B_nickName 수정해야 함.
-	public void insertBoard(BoardVO bVo) {
+	// 11/29 이민혁 id값 테이블 수정후 id값 받기, 이미지 등록 미구현.
+	public int insertBoard(BoardVO bVo) {
+		int result = 0;
 		String sql = "INSERT INTO board(B_NUM, B_NICKNAME, B_TITLE, B_CONTENT, B_HASHTAG) "
-				+ "values(sql_board.nextval, 'TestNN', ?, ?, ?)";
+				+ "values(sql_board.nextval, ?, ?, ?, ?)";
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -242,17 +243,18 @@ public class HelpkitchenDAO {
 			conn = DBConnector.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			
-//			pstmt.setString(1, bVo.getbNickName());
-			pstmt.setString(1, bVo.getbTitle());
-			pstmt.setString(2, bVo.getbContent());
-			pstmt.setString(3, bVo.getbHashTag());
-			
+			pstmt.setString(1, bVo.getbNickName());
+			pstmt.setString(2, bVo.getbTitle());
+			pstmt.setString(3, bVo.getbContent());
+			pstmt.setString(4, bVo.getbHashTag());
 			pstmt.executeUpdate();
+			result = 1;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			DBConnector.close(conn, pstmt);
 		}
+		return result;
 	}
 	
 	// 11/23 이민혁
