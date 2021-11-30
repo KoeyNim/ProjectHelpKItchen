@@ -24,6 +24,11 @@
 
 			</div>
 			<div class="int-area">
+				<input type="password" name="checkPassword" id="checkPassword"
+					placeholder="비밀번호 확인" value="${checkPassword}" required />
+				<p>${passwordMessage }
+			</div>
+			<div class="int-area">
 				<input type="text" name="mNickName" placeholder="닉네임"
 					value="${mNickName}" required />
 
@@ -35,10 +40,11 @@
 				<p>${emailMessage }</p>
 			</div>
 			<div class="btn-area">
-				<button type="submit">가입하기</button>
+				<button type="submit" onclick="passCheck();">가입하기</button>
 			</div>
 		</form>
 
 	</div>
 </body>
+</html>
 </html>
