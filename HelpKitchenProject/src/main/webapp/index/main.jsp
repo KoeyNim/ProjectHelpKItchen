@@ -5,13 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
 </head>
 <body>
 <%@ include file="../include/header.jsp"%>
 <%@ include file="../include/nav.jsp"%>
 
 	<div class="swiper mySwiper" style="border: solid 1px red; margin: 30px auto;">
+	<h3>#카테고리 이름</h3>
 		<div class="swiper-wrapper">
 			<div class="swiper-slide">
 				<li style="width: 100%;">
@@ -61,6 +61,7 @@
 	</div>
 
 	<div class="swiper mySwiper" style="border: solid 1px red; margin: 30px auto;">
+	<h3>#카테고리 이름</h3>
       <div class="swiper-wrapper">
         <div class="swiper-slide">Slide 2</div>
         <div class="swiper-slide">Slide 2</div>
@@ -78,6 +79,7 @@
     </div>
     
 <div class="swiper mySwiper" style="border: solid 1px red; margin: 30px auto;">
+<h3>#카테고리 이름</h3>
       <div class="swiper-wrapper">
         <div class="swiper-slide">Slide 2</div>
         <div class="swiper-slide">Slide 2</div>
@@ -95,6 +97,7 @@
     </div>
     
 <div class="swiper mySwiper" style="border: solid 1px red; margin: 30px auto;">
+<h3>#카테고리 이름</h3>
       <div class="swiper-wrapper">
         <div class="swiper-slide">Slide 2</div>
         <div class="swiper-slide">Slide 2</div>
@@ -113,7 +116,5 @@
 
 
 	<%@ include file="../include/footer.jsp"%>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script src="../js/main_swiper.js"></script>
 </body>
 </html>

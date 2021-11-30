@@ -5,8 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="../css/style.css">
-<script type="text/javascript" src="../js/member.js"></script>
 </head>
 <jsp:include page="../include/login_header.jsp"/>
 
@@ -22,12 +20,12 @@
 		</div>
 		<p>${message}</p>
 	<div class="btn-area">
-		<button type="submit" value="로그인" onclick="return loginCheck()">로그인</button>
+		<button type="submit" onclick="return loginCheck()">로그인</button>
 	</div>
 	</form>
 	<div class="btn-area">
-		<button value="회원가입" onclick="location.href='HelpkitchenServlet?command=member_policy_form'">회원가입</button>
-		<button value="비밀번호 찾기" onclick="location.href='HelpkitchenServlet?command=member_find_password_form'">비밀번호 찾기</button>
+		<button onclick="location.href='HelpkitchenServlet?command=member_policy_form'">회원가입</button>
+		<button onclick="location.href='HelpkitchenServlet?command=member_find_password_form'">비밀번호 찾기</button>
 	</div>
 </div>
 </body>

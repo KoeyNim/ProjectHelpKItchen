@@ -5,7 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 <body>
 	<jsp:include page="../include/login_header.jsp" />
@@ -36,7 +35,7 @@
 				<p>${emailMessage }</p>
 			</div>
 			<div class="btn-area">
-				<button type="submit" value="가입하기">가입하기</button>
+				<button type="submit">가입하기</button>
 			</div>
 		</form>
 
