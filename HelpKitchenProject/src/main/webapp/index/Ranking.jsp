@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>메인, 랭킹</title>
-<link rel="stylesheet" type="text/css" href="../css/Rankingdesign.css">
+<link rel="stylesheet" type="text/css" href="${contextRoot}/css/Rankingdesign.css">
 </head>
 <body>
 <%@ include file="../include/header.jsp"%>

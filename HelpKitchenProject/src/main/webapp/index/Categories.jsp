@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>메인, 분류</title>
-<link rel="stylesheet" type="text/css" href="../css/Categoriedesign.css">
+<link rel="stylesheet" type="text/css" href='${contextRoot}/css/Categoriedesign.css'>
 </head>
 <body>
 <%@ include file="../include/header.jsp"%>

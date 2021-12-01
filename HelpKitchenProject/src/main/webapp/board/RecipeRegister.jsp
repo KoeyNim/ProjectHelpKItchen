@@ -18,12 +18,12 @@
         <tr>
             <td>레시피 제목</td>
             <td style="border: 0;">
-            <input type="text" name="register_name" size=30>
+            <input type="text" name="bTitle" size=30>
             </td>
         </tr>
         <tr>
             <td>요리소개</td>
-            <td><textarea name="register_recipe"></textarea></td>
+            <td><textarea name="bContent"></textarea></td>
         </tr>
         <tr>
             <div class="register_filebox">
@@ -38,7 +38,7 @@
    <table class="register_table2">
         <tr>
             <td>카테고리</td>
-            <td><select>
+            <td><select name="bHashTag">
                <option value="1">종류별</option>
                <option value="2">한식</option>
                <option value="3">일식</option>
@@ -86,12 +86,12 @@
             </select></td>
          </tr>
      </table>
-</form>
-  
-<br><br>
+     <br><br>
 <div align="center">
 <input class="register_btn" type="submit" value="저장">
 <input class="register_btn" type="reset" value="취소">
 </div>
+</form>
+ 
 </body>
 </html>
