@@ -4,6 +4,8 @@ import com.helpkitchen.controller.action.Action;
 import com.helpkitchen.controller.action.board.BoardViewAction;
 import com.helpkitchen.controller.action.board.BoardWriteAction;
 import com.helpkitchen.controller.action.board.BoardWriteFormAction;
+import com.helpkitchen.controller.action.member.MemberEditPasswordAction;
+import com.helpkitchen.controller.action.member.MemberEditPasswordFormAction;
 import com.helpkitchen.controller.action.member.MemberFindPassAction;
 import com.helpkitchen.controller.action.member.MemberFindPassFormAction;
 import com.helpkitchen.controller.action.member.MemberJoinAction;
@@ -60,6 +62,10 @@ public class ActionFactory {
 			action = new BoardWriteAction();
 		} else if (command.equals("board_view")) {
 			action = new BoardViewAction();
+		} else if (command.equals("member_edit_password")) {
+			action = new MemberEditPasswordAction();
+		} else if (command.equals("member_edit_password_form")) {
+			action = new MemberEditPasswordFormAction();
 		}
 		return action;
 	}

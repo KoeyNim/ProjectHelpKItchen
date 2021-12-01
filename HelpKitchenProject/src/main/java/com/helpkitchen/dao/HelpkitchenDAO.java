@@ -211,6 +211,54 @@ public class HelpkitchenDAO {
 		}
 
 	}
+	//비밀번호 변경 검증 부분
+	public int checkPasswordById(String mId, String nowPassword) {
+		int result = -1;
+		String password = "";
+		String sql = "select m_password from member where m_id=?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		try {
+			conn = DBConnector.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, mId);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+			password = rs.getString("m_password");
+			if (password.equals(nowPassword)) {
+				result = 1;
+			} else {
+				result = -1;
+			}
+		} 
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+
+			DBConnector.close(conn, pstmt, rs);
+		}
+		return result;
+	}
+	//비밀번호 변경
+	public void updatePassword(String editPassword, String mId) {
+		String sql = "update member set m_password = ? where m_id = ?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try {
+			conn = DBConnector.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, editPassword);
+			pstmt.setString(2, mId);
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBConnector.close(conn, pstmt);
+		}
+	}
 
 	// 11/23 이민혁 최신순으로 게시글 보기
 	public List<BoardVO> selectAllBoards() {

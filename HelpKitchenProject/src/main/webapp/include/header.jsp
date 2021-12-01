@@ -46,7 +46,7 @@
 	<div class="btn-area2">
 		<button value="로그아웃" onclick="location.href='HelpkitchenServlet?command=member_logout'">로그아웃</button>
 		<button value="레시피 작성" onclick="location.href='HelpkitchenServlet?command=board_write_form'">레시피 작성</button>
-		<button value="비밀번호 변경" onclick="location.href='">비밀번호 변경</button>
+		<button value="비밀번호 변경" onclick="location.href='HelpkitchenServlet?command=member_edit_password_form'">비밀번호 변경</button>
 	 </div>
  </c:when>
 </c:choose>
