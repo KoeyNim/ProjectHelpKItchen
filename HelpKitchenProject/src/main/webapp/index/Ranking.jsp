@@ -10,21 +10,34 @@
 <body>
 <%@ include file="../include/header.jsp"%>
 <%@ include file="../include/nav.jsp"%>
-<div id=calendar align="right">
-<input class="btn4" type="submit" value="일간">
-<input class="btn4" type="submit" value="주간">
-<input class="btn4" type="submit" value="월간">
+
+<div class="container">
+  <section class="align-items-center">
+ 
+<br>
+<div id=Ranking_calendar align="right">
+<input class="Ranking_btn" type="submit" value="일간">
+<input class="Ranking_btn" type="submit" value="주간">
+<input class="Ranking_btn" type="submit" value="월간">
+</div>
+<input class="Ranking_btn" type="submit" value="레시피">
+<input class="Ranking_btn" type="submit" value="검색어">
+<input class="Ranking_btn" type="submit" value="쉐프">
+
+
+<br><br><br>
+<div class="Ranking_box">
+    <div class="Ranking_minibox">
+       <a href="??">
+       <img src="../img/Recipeimage1.png"></a>
+       <p class="Ranking_title">[마늘종볶음]<br>단짠단짠 자꾸만 손이가요~</p>
+       <p class="Ranking_text1">닉네임</p>
+       <p class="Ranking_text2">★★★★★ 조회수:??</p>
+    </div>
+</div>
+</section>
 </div>
 
-
-<input class="btn1" type="submit" value="레시피">
-<input class="btn2" type="submit" value="검색어">
-<input class="btn3" type="submit" value="쉐프">
-
-
-<div id="Rankingimage">
-<!-- 슬라이드사진 -->
-</div>
 <%@ include file="../include/footer.jsp"%>
 </body>
 </html>
