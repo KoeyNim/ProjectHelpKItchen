@@ -1,16 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="../include/header.jsp"%>
+<%@ include file="../include/nav.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href='${contextRoot}/css/Categoriedesign.css'>
 <meta charset="UTF-8">
 <title>메인, 분류</title>
-<link rel="stylesheet" type="text/css" href='${contextRoot}/css/Categoriedesign.css'>
 </head>
 <body>
-<%@ include file="../include/header.jsp"%>
-<%@ include file="../include/nav.jsp"%>
- 
  
  <div class="container">
   <section class="align-items-center">

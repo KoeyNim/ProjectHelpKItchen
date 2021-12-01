@@ -1,15 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="../include/header.jsp"%>
+<%@ include file="../include/nav.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href='${contextRoot}/css/Rankingdesign.css'>
 <meta charset="UTF-8">
 <title>메인, 랭킹</title>
-<link rel="stylesheet" type="text/css" href="${contextRoot}/css/Rankingdesign.css">
 </head>
 <body>
-<%@ include file="../include/header.jsp"%>
-<%@ include file="../include/nav.jsp"%>
 
 <div class="container">
   <section class="align-items-center">
