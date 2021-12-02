@@ -59,8 +59,11 @@
 </div>
 
 <br><br><br>
+
+<!-- 따로 구현하실거 아니면 지워도 상관 없음 -->
 <p>총<p1 class=Categorie_text>111,111</p1>개의 맛있는 레시피가 있습니다.</p>
 
+<!-- 지워도 상관 없음 -->
 <div class="Categorie_box">
     <div class="Categore_minibox">
        <a href="??">
@@ -70,6 +73,22 @@
        <p class="Categorie_text2">★★★★★ 조회수:??</p>
     </div>
 </div>
+
+<!-- 틀만 잡아주면 끝 -->
+<c:forEach var="board" items="${boardList}">
+	<div class="Categorie_box">
+		<div class="Categore_minibox">
+			<a href="HelpkitchenServlet?command=board_view&bNum=${board.bNum}">
+				<input type="hidden" name="bNum" value="${board.bNum}">
+				<img src="${contextRoot}/upload/${board.bImageUrl}">
+			</a>
+		<p class="Categorie_title">[${board.bTitle}]<br>${board.bContent}</p>
+		<p class="Categorie_text1">닉네임 : ${board.bNickName}</p>
+		<p class="Categorie_text2">추천수 : ${board.bVote}<br>조회수 : ${board.bViews}</p>
+		</div>
+	</div>
+</c:forEach>
+
 </section>
 </div>
 

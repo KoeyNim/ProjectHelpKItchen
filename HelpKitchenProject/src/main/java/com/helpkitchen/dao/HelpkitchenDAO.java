@@ -279,6 +279,7 @@ public class HelpkitchenDAO {
 				BoardVO bVo = new BoardVO();
 				
 				bVo.setbNum(rs.getLong("b_num"));
+				bVo.setbId(rs.getString("b_id"));
 				bVo.setbNickName(rs.getString("b_nickName"));
 				bVo.setbTitle(rs.getString("b_title"));
 				bVo.setbContent(rs.getString("b_content"));
@@ -367,7 +368,7 @@ public class HelpkitchenDAO {
 			if (rs.next()) {
 				bVo = new BoardVO();
 				
-				bVo.setbNum(rs.getLong("b_num"));
+				bVo.setbId(rs.getString("b_id"));
 				bVo.setbNickName(rs.getString("b_nickName"));
 				bVo.setbTitle(rs.getString("b_title"));
 				bVo.setbContent(rs.getString("b_content"));
@@ -375,7 +376,7 @@ public class HelpkitchenDAO {
 				bVo.setbTag(rs.getString("b_Tag"));
 				bVo.setbVote(rs.getLong("b_vote"));
 				bVo.setbViews(rs.getLong("b_views"));
-				bVo.setbImageUrl(rs.getString("imageurl"));
+				bVo.setbImageUrl(rs.getString("b_imageurl"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

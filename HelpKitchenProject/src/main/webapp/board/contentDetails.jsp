@@ -24,11 +24,11 @@ table {width: 50%; margin: 0 auto;}
 			<div class="col-sm-1"></div>
 			<div class="col-xl-10">
 				<div>
-					<img src="../img/logo.png" alt="대표사진" width="60%" height="50%">
+					<img src="${contextRoot}/upload/${bVo.bImageUrl}" alt="대표사진" width="60%" height="50%">
 				</div>
 				<br>
 				<div>
-					<h1>레시피 제목 가져오기</h1>
+					<h1>${bVo.bTitle}</h1>
 				</div>
 				<br>
 				<div>
@@ -102,14 +102,14 @@ table {width: 50%; margin: 0 auto;}
 		</div>
 	</div>
 
-	<c:choose>
-<c:when test="${mVo == null}">
-<!-- 로그인이 되어있지 않는 경우 -->
+<c:choose>
+<c:when test="${mVo == null or mVo.mId != bVo.bId }">
+<!-- 로그인이 되어있지 않거나 대상이 아닌 경우 -->
    	<div class="btn-area2">
 		<button onclick="location.href=''">이전으로</button>
 	</div>
  </c:when>
- <c:when test="${mVo != null}">
+ <c:when test="${mVo.mId == bVo.bId}">
 <!-- 로그인이 되어있는경우 나오는 화면  -->
 	<div class="btn-area2">
 		<button onclick="location.href=''">이전으로</button>
