@@ -283,10 +283,10 @@ public class HelpkitchenDAO {
 				bVo.setbTitle(rs.getString("b_title"));
 				bVo.setbContent(rs.getString("b_content"));
 				bVo.setbCredat(rs.getString("b_credat"));
-				bVo.setbHashTag(rs.getString("b_hashTag"));
+				bVo.setbTag(rs.getString("b_Tag"));
 				bVo.setbVote(rs.getLong("b_vote"));
 				bVo.setbViews(rs.getLong("b_views"));
-				bVo.setbImage(rs.getBytes("b_image"));
+				bVo.setbImageUrl(rs.getString("b_imageurl"));
 				
 				list.add(bVo);
 			}
@@ -298,11 +298,11 @@ public class HelpkitchenDAO {
 		return list;
 	}
 	
-	// 11/29 이민혁 id값 테이블 수정후 id값 받기, 이미지 등록 미구현.
+	// 12/02 이민혁 insert 완료
 	public int insertBoard(BoardVO bVo) {
 		int result = 0;
-		String sql = "INSERT INTO board(B_NUM, B_NICKNAME, B_TITLE, B_CONTENT, B_HASHTAG) "
-				+ "values(sql_board.nextval, ?, ?, ?, ?)";
+		String sql = "INSERT INTO board(B_NUM, B_ID, B_NICKNAME, B_TITLE, B_CONTENT, B_TAG, B_IMAGEURL) "
+				+ "values(sql_board.nextval, ?, ?, ?, ?, ?, ?)";
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -311,10 +311,12 @@ public class HelpkitchenDAO {
 			conn = DBConnector.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setString(1, bVo.getbNickName());
-			pstmt.setString(2, bVo.getbTitle());
-			pstmt.setString(3, bVo.getbContent());
-			pstmt.setString(4, bVo.getbHashTag());
+			pstmt.setString(1, bVo.getbId());
+			pstmt.setString(2, bVo.getbNickName());
+			pstmt.setString(3, bVo.getbTitle());
+			pstmt.setString(4, bVo.getbContent());
+			pstmt.setString(5, bVo.getbTag());
+			pstmt.setString(6, bVo.getbImageUrl());
 			pstmt.executeUpdate();
 			result = 1;
 		} catch (SQLException e) {
@@ -370,10 +372,10 @@ public class HelpkitchenDAO {
 				bVo.setbTitle(rs.getString("b_title"));
 				bVo.setbContent(rs.getString("b_content"));
 				bVo.setbCredat(rs.getString("b_credat"));
-				bVo.setbHashTag(rs.getString("b_hashTag"));
+				bVo.setbTag(rs.getString("b_Tag"));
 				bVo.setbVote(rs.getLong("b_vote"));
 				bVo.setbViews(rs.getLong("b_views"));
-				bVo.setbImage(rs.getBytes("b_image"));
+				bVo.setbImageUrl(rs.getString("imageurl"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -384,8 +386,9 @@ public class HelpkitchenDAO {
 	}
 	
 	// 11/23 이민혁 게시글 수정
-	public void updateBoard(BoardVO bVo) {
-		String sql = "update board set b_title=?, b_content=?, b_hashTag=?, b_image=? where b_num=?";
+	public int updateBoard(BoardVO bVo) {
+		int result = 0;
+		String sql = "update board set b_title=?, b_content=?, b_Tag=?, b_imageurl=? where b_num=?";
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -397,20 +400,23 @@ public class HelpkitchenDAO {
 			
 			pstmt.setString(1, bVo.getbTitle());
 			pstmt.setString(2, bVo.getbContent());
-			pstmt.setString(3, bVo.getbHashTag());
-			pstmt.setBytes(4, bVo.getbImage());
+			pstmt.setString(3, bVo.getbTag());
+			pstmt.setString(4, bVo.getbImageUrl());
 			pstmt.setLong(5, bVo.getbNum());
 			
 			pstmt.executeUpdate();
+			result = 1;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			DBConnector.close(conn, pstmt);
 		}
+		return result;
 	}
 	
 	// 11/23 이민혁 게시글 삭제
-	public void deleteBoard(String bNum) {
+	public int deleteBoard(String bNum) {
+		int result = 0;
 		String sql = "delete board where b_num=?";
 		
 		Connection conn = null;
@@ -423,11 +429,13 @@ public class HelpkitchenDAO {
 			pstmt.setString(1, bNum);
 			
 			pstmt.executeUpdate();
+			result = 1;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			DBConnector.close(conn, pstmt);
 		}
+		return result;
 	}
 	
 }
