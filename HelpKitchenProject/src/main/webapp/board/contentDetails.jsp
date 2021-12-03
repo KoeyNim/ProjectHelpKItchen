@@ -70,7 +70,7 @@ table {width: 50%; margin: 0 auto;}
 				</div>
 				<br>
 				<div>
-					<h5>태그</h5>
+					<h5>${bVo.bTag}</h5>
 				</div>
 				<br>
 
@@ -106,18 +106,28 @@ table {width: 50%; margin: 0 auto;}
 <c:when test="${mVo == null or mVo.mId != bVo.bId }">
 <!-- 로그인이 되어있지 않거나 대상이 아닌 경우 -->
    	<div class="btn-area2">
-		<button onclick="location.href=''">이전으로</button>
+		<button onclick="location.href=document.referrer;">이전으로</button>
 	</div>
  </c:when>
  <c:when test="${mVo.mId == bVo.bId}">
 <!-- 로그인이 되어있는경우 나오는 화면  -->
 	<div class="btn-area2">
-		<button onclick="location.href=''">이전으로</button>
-		<button onclick="location.href=''">수정하기</button>
-		<button onclick="location.href=''">삭제하기</button>
+		<button onclick="location.href=document.referrer;">이전으로</button>
+		<button onclick="location.href='HelpkitchenServlet?command=board_update_form&bNum=${bVo.bNum}'">수정하기</button>
+		<button onclick="return deleteCheck()">삭제하기</button>
 	 </div>
  </c:when>
 </c:choose>
+
+<script>
+function deleteCheck() {
+	 if (confirm("정말 삭제하시겠습니까?") == true){   
+		 location.href='HelpkitchenServlet?command=board_delete&bNum=${bVo.bNum}';
+	 }else{   
+	     return false;
+	 }
+}
+</script>
 
 <%@ include file="../include/footer.jsp"%>
 <script id="dsq-count-scr" src="//helpkitchen.disqus.com/count.js" async></script>

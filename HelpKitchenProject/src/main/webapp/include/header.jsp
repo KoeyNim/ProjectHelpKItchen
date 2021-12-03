@@ -10,6 +10,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
 <link rel="stylesheet" type="text/css" href="../css/style.css">
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <style>
 .container {max-width: 90%;}
 .img-thumbnail {border: 1px solid #fff;}

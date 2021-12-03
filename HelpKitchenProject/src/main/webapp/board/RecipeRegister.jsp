@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ 
 <%@ include file="../include/header.jsp"%>
 <%@ include file="../include/nav.jsp"%>
 <!DOCTYPE html>
@@ -33,7 +34,7 @@
             	<td>
 	            	<img id="mainPhotoHolder" onclick="browseMainFile" alt=""
 	            	src="https://recipe1.ezmember.co.kr/img/pic_none4.gif" style="width: 200px; height: 200px; cursor:pointer">
-	            	<input class="filebox" type="file" name="bImage">
+	            	<input class="filebox" type="file" name="bImage" id="bImage">
 	            </td>
             </div>
         </tr>
@@ -96,10 +97,12 @@
      </table>
 <br><br>
 <div align="center">
-<button type="submit" class="register_btn" onclick="return RegisterCheck()">저장</button>
+<button type="submit" class="register_btn" onclick="return RegisterCheck();">저장</button>
 <button type="reset" class="register_btn">다시작성</button>
+<button type="button" class="register_btn" onclick="location.href=document.referrer;">이전</button>
 </div>
 </form>
-<%@ include file="../include/footer.jsp"%> 
+<%@ include file="../include/footer.jsp"%>
+
 </body>
 </html>

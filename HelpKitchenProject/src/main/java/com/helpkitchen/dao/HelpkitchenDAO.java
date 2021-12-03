@@ -406,6 +406,7 @@ public class HelpkitchenDAO {
 			if (rs.next()) {
 				bVo = new BoardVO();
 				
+				bVo.setbNum(rs.getLong("b_num"));
 				bVo.setbId(rs.getString("b_id"));
 				bVo.setbNickName(rs.getString("b_nickName"));
 				bVo.setbTitle(rs.getString("b_title"));
@@ -424,7 +425,7 @@ public class HelpkitchenDAO {
 		return bVo;
 	}
 	
-	// 11/23 이민혁 게시글 수정
+	// 12/03 이민혁 수정 구현
 	public int updateBoard(BoardVO bVo) {
 		int result = 0;
 		String sql = "update board set b_title=?, b_content=?, b_Tag=?, b_imageurl=? where b_num=?";
@@ -453,7 +454,7 @@ public class HelpkitchenDAO {
 		return result;
 	}
 	
-	// 11/23 이민혁 게시글 삭제
+	// 12/03 이민혁 삭제 구현
 	public int deleteBoard(String bNum) {
 		int result = 0;
 		String sql = "delete board where b_num=?";
