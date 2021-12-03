@@ -259,6 +259,44 @@ public class HelpkitchenDAO {
 			DBConnector.close(conn, pstmt);
 		}
 	}
+	
+	public List<BoardVO> selectSearchBoards(String keyword){
+		String sql = " select * from board where b_title like ?";
+		
+		List<BoardVO> list = new ArrayList<>();
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			conn = DBConnector.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, "%" + keyword + "%");
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				BoardVO bVo = new BoardVO();
+				
+				bVo.setbNum(rs.getLong("b_num"));
+				bVo.setbId(rs.getString("b_id"));
+				bVo.setbNickName(rs.getString("b_nickName"));
+				bVo.setbTitle(rs.getString("b_title"));
+				bVo.setbContent(rs.getString("b_content"));
+				bVo.setbCredat(rs.getString("b_credat"));
+				bVo.setbTag(rs.getString("b_Tag"));
+				bVo.setbVote(rs.getLong("b_vote"));
+				bVo.setbViews(rs.getLong("b_views"));
+				bVo.setbImageUrl(rs.getString("b_imageurl"));
+				
+				list.add(bVo);
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBConnector.close(conn, pstmt, rs);
+		}
+		return list;
+	}
+
 
 	// 11/23 이민혁 최신순으로 게시글 보기
 	public List<BoardVO> selectAllBoards() {

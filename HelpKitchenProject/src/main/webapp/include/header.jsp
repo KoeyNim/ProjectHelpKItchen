@@ -27,8 +27,9 @@
 <nav class="navbar navbar-light bg-light">
   <div class="container">
   <a href="/HelpkitchenServlet?command=help_main"><img src="../img/logo.png" class="img-thumbnail" alt="logo"></a>
-    <form class="d-flex" style="width:400px">
-      <input class="form-control me-4" type="search" placeholder="Search" aria-label="Search">
+   <form class="d-flex" style="width:400px" action="HelpkitchenServlet" method="post">
+    <input type="hidden" name="command" value="board_search">
+      <input class="form-control me-4" type="search" name="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success" type="submit">Search</button>
      </form>
      

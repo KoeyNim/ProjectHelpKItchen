@@ -1,6 +1,7 @@
 package com.helpkitchen.controller;
 
 import com.helpkitchen.controller.action.Action;
+import com.helpkitchen.controller.action.board.BoardSearchAction;
 import com.helpkitchen.controller.action.board.BoardViewAction;
 import com.helpkitchen.controller.action.board.BoardWriteAction;
 import com.helpkitchen.controller.action.board.BoardWriteFormAction;
@@ -66,6 +67,8 @@ public class ActionFactory {
 			action = new MemberEditPasswordAction();
 		} else if (command.equals("member_edit_password_form")) {
 			action = new MemberEditPasswordFormAction();
+		} else if (command.equals("board_search")) {
+			action = new BoardSearchAction();
 		}
 		return action;
 	}
