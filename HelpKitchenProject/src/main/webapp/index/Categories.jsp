@@ -17,11 +17,11 @@
  <div id="Categorietable">
  <div class="Categorietable_row">
    <span class="cell col1">종류별</span>
-   <span class="cell col2"><a href="#" onclick="location.href='?'">전체</a></span>
-   <span class="cell col4"><a href="#" onclick="location.href='?'">한식</a></span>
-   <span class="cell col5"><a href="#" onclick="location.href='?'">일식</a></span>
-   <span class="cell col6"><a href="#" onclick="location.href='?'">중식</a></span>
-   <span class="cell col7"><a href="#" onclick="location.href='?'">양식</a></span>
+   <span class="cell col2"><a href="HelpkitchenServlet?command=help_categories">전체</a></span>
+   <span class="cell col4"><a href="HelpkitchenServlet?command=board_tag&bTag=%25ED%2595%259C%25EC%258B%259D">한식</a></span>
+   <span class="cell col5"><a href="HelpkitchenServlet?command=board_tag&bTag=%25EC%259D%25BC%25EC%258B%259D">일식</a></span>
+   <span class="cell col6"><a href="HelpkitchenServlet?command=board_tag&bTag=%25EC%25A4%2591%25EC%258B%259D">중식</a></span>
+   <span class="cell col7"><a href="HelpkitchenServlet?command=board_tag&bTag=%25EC%2596%2591%25EC%258B%259D">양식</a></span>
  </div>
  <div class="Categorietable_row2">
    <span class="cell col8">상황별</span>
@@ -93,5 +93,6 @@
 </div>
 
 <%@ include file="../include/footer.jsp"%>
+
 </body>
 </html>

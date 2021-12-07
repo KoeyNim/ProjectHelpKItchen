@@ -21,6 +21,7 @@ import com.helpkitchen.controller.action.member.MemberPolicyFormAction;
 import com.helpkitchen.controller.action.help.HelpKitchenCategoriesAction;
 import com.helpkitchen.controller.action.help.HelpKitchenMainAction;
 import com.helpkitchen.controller.action.help.HelpKitchenRankingAction;
+import com.helpkitchen.controller.action.help.HelpKitchenTagAction;
 
 public class ActionFactory {
 
@@ -76,6 +77,8 @@ public class ActionFactory {
 			action = new MemberEditPasswordFormAction();
 		} else if (command.equals("board_search")) {
 			action = new BoardSearchAction();
+		} else if (command.equals("board_tag")) {
+			action = new HelpKitchenTagAction();
 		}
 		return action;
 	}
