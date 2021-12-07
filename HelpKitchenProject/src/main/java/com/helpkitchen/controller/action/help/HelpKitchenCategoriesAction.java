@@ -17,7 +17,6 @@ public class HelpKitchenCategoriesAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "/index/Categories.jsp";
-		
 		HelpkitchenDAO hDao = HelpkitchenDAO.getInstance();
 		List<BoardVO> boardList = hDao.selectAllBoards();
 		request.setAttribute("boardList", boardList);
