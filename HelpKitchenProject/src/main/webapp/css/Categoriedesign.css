@@ -8,7 +8,7 @@
 .a:hover { text-decoration:none
 }
 
-.Categorietable_row1 {
+.Categorietable_row {
 	display: table-row;
 }
 
@@ -30,8 +30,11 @@
 
 .cell{
 	display: table-cell;
-	padding: 10px;
+	width: 200px;
+	padding: 25px;
 	border-bottom: 1px solid #DDD;
+	text-align:center;
+	vertical-align:middle;
 }
 
 
@@ -39,11 +42,14 @@
 	width: 30%;
 }
 
-.col2 .col9 .col16 .col22{
-	color: #fff;
-    background: #ffc107;
-    margin: 0;
-    border-radius: 16px;
+.col2, .col4{
+	font-size: 18px;
+	font-weight: 700;
+	background-color: #ffc107;
+	backgorund-size: 50% 50%;
+	color: black;
+	border: #ffc107;
+    border-radius: 20px;
 }
 
 .Categorie_text{

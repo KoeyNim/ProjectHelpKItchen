@@ -14,7 +14,7 @@
 <div class="container">
   <section class="align-items-center">
  
-<br>
+<!-- <br>
 <div id=Ranking_calendar align="right">
 <input class="Ranking_btn" type="submit" value="일간">
 <input class="Ranking_btn" type="submit" value="주간">
@@ -22,12 +22,17 @@
 </div>
 <input class="Ranking_btn" type="submit" value="레시피">
 <input class="Ranking_btn" type="submit" value="검색어">
-<input class="Ranking_btn" type="submit" value="쉐프">
+<input class="Ranking_btn" type="submit" value="쉐프"> -->
+<br>
+<input class="Ranking_btn" type="submit" value="오늘의 랭킹">
 
 
 <br><br><br>
 <div class="Ranking_box">
     <div class="Ranking_minibox">
+       <p class="Ranking_number">
+        <b>1st</b>
+       </p>
        <a href="??">
        <img src="../img/Recipeimage1.png"></a>
        <p class="Ranking_title">[마늘종볶음]<br>단짠단짠 자꾸만 손이가요~</p>

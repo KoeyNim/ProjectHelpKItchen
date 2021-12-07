@@ -23,6 +23,7 @@
      text-align: center;
  }
  
+ 
  .Ranking_title {
      margin-bottom: 10px;
      font-size: 19px;
@@ -42,9 +43,27 @@
  }
  
  .Ranking_minibox {
+     position: relative;
      border: 1px solid #d8d8d8;
      height: 450px;
  }
  .Ranking_minibox img {
      margin-bottom: 10px;
+ }
+ 
+ .Ranking_number{
+     position: absolute;
+     left: -10px;
+     top: -10px;
+     z-index: 100;
+     background: #ffc107;
+     border: 1px solid #ffc107;
+     box-shadow: 3px 3px 0 rgb(0 0 0 / 8%);
+     min-width: 36px;
+     text-align: center;
+     border-radius: 8px;
+     line-height: 1;
+     padding: 8px 7px 10px;
+     letter-spacing: -0.03em;
+     vertical-align: unset;
  }
