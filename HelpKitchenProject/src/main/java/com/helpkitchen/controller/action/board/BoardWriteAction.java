@@ -38,7 +38,8 @@ public class BoardWriteAction implements Action {
 		String content = multi.getParameter("bContent");
 		String bTag = multi.getParameter("bTag");
 		String bImageUrl = multi.getFilesystemName("bImage");
-		
+		String bPeople = multi.getParameter("bPeople");
+		String bTime = multi.getParameter("bTime");
 		BoardVO bVo = new BoardVO();
 		bVo.setbId(id);
 		bVo.setbNickName(nickName);
@@ -46,7 +47,8 @@ public class BoardWriteAction implements Action {
 		bVo.setbContent(content);
 		bVo.setbTag(bTag);
 		bVo.setbImageUrl(bImageUrl);
-		
+		bVo.setbPeople(bPeople);
+		bVo.setbTime(bTime);
 		HelpkitchenDAO hDao = HelpkitchenDAO.getInstance();
 		int result = hDao.insertBoard(bVo);
 		System.out.println(result);

@@ -21,7 +21,7 @@ public class BoardViewAction implements Action {
 		String bNum = request.getParameter("bNum");
 		HelpkitchenDAO hDao = HelpkitchenDAO.getInstance();
 		BoardVO bVo = hDao.selectOneBoardByNum(bNum);
-		
+		hDao.updateViews(bNum);
 		request.setAttribute("bVo", bVo);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);

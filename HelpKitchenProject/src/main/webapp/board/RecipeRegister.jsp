@@ -74,20 +74,20 @@
         <tr>
             <td>요리정보</td>
             <td>
-            <select name="b_people" class="reciepe_category">
-				<option value="0">인원</option>
-				<option value="1">1~2인분</option>
-				<option value="2">2~3인분</option>
-				<option value="3">4~5인분</option>
-				<option value="4">6인분이상</option>
+            <select name="bPeople" class="reciepe_category">
+				<option>인원</option>
+				<option>1~2인분</option>
+				<option>2~3인분</option>
+				<option>4~5인분</option>
+				<option>6인분이상</option>
             </select>
-            <select name="b_time" class="reciepe_category">
-            	<option value="0">시간</option>
-	            <option value="1">5분이내</option>
-	            <option value="2">10분이내</option>
-	            <option value="3">30분이내</option>
-	            <option value="4">1~10시간이상</option>
-	            <option value="5">기타</option>
+            <select name="bTime" class="reciepe_category">
+            	<option>시간</option>
+	            <option>5분이내</option>
+	            <option>10분이내</option>
+	            <option>30분이내</option>
+	            <option>1~10시간이상</option>
+	            <option>기타</option>
             </select>
             </td>
          </tr>

@@ -38,8 +38,8 @@ table {width: 50%; margin: 0 auto;}
 							<th>소요시간</th>
 						</tr>
 						<tr>
-							<td>불러오기</td>
-							<td>불러오기</td>
+							<td>${bVo.bPeople}</td>
+							<td>${bVo.bTime}</td>
 						</tr>
 					</table>
 				</div>
@@ -85,13 +85,7 @@ table {width: 50%; margin: 0 auto;}
 	</div>
 
 <c:choose>
-<c:when test="${mVo == null or mVo.mId != bVo.bId }">
-<!-- 로그인이 되어있지 않거나 대상이 아닌 경우 -->
-   	<div class="btn-area3" align="center">
-		<button onclick="location.href=document.referrer;">이전으로</button>
-	</div>
- </c:when>
- <c:when test="${mVo.mId == bVo.bId}">
+<c:when test="${mVo.mId == bVo.bId or mVo.mId == 'admin'}">
 <!-- 로그인이 되어있는경우 나오는 화면  -->
 	<div class="btn-area3" align="center">
 		<button onclick="location.href=document.referrer;">이전으로</button>
@@ -99,6 +93,14 @@ table {width: 50%; margin: 0 auto;}
 		<button onclick="return deleteCheck()">삭제하기</button>
 	 </div>
  </c:when>
+
+<c:when test="${mVo == null or mVo.mId != bVo.bId }">
+<!-- 로그인이 되어있지 않거나 대상이 아닌 경우 -->
+   	<div class="btn-area3" align="center">
+		<button onclick="location.href=document.referrer;">이전으로</button>
+	</div>
+ </c:when>
+ 
 </c:choose>
 
 <script>

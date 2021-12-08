@@ -14,7 +14,20 @@ public class BoardVO {
 	private long bVote;
 	private long bViews;
 	private String bImageUrl;
-	
+	private String bPeople;
+	private String bTime;
+	public String getbPeople() {
+		return bPeople;
+	}
+	public void setbPeople(String bPeople) {
+		this.bPeople = bPeople;
+	}
+	public String getbTime() {
+		return bTime;
+	}
+	public void setbTime(String bTime) {
+		this.bTime = bTime;
+	}
 	public long getbNum() {
 		return bNum;
 	}

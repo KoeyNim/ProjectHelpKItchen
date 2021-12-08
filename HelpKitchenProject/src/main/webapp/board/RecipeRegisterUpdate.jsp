@@ -42,10 +42,10 @@
             <td>
             <select name="bTag" id="bTag" class="reciepe_category">
 	               <option value="0">종류별</option>
-	               <option value="한식">한식</option>
-	               <option value="중식">중식</option>
-	               <option value="일식">일식</option>
-	               <option value="양식">양식</option>
+	               <option <c:if test="${bVo.bTag == '한식'}">selected</c:if>>한식</option>
+	               <option <c:if test="${bVo.bTag == '중식'}">selected</c:if>>중식</option>
+	               <option <c:if test="${bVo.bTag == '일식'}">selected</c:if>>일식</option>
+	               <option <c:if test="${bVo.bTag == '양식'}">selected</c:if>>양식</option>
             </select>
             <select class="reciepe_category">
    	               <option value="0">상황별</option>
@@ -73,20 +73,20 @@
         </tr>
         <tr>
             <td>요리정보</td>
-            <td><select class="reciepe_category">
-				<option value="0">인원</option>
-				<option value="1">1~2인분</option>
-				<option value="2">2~3인분</option>
-				<option value="3">4~5인분</option>
-				<option value="4">6인분이상</option>
+            <td><select name="bPeople" class="reciepe_category">
+				<option>인원</option>
+				<option <c:if test="${bVo.bPeople == '1~2인분'}">selected</c:if>>1~2인분</option>
+				<option <c:if test="${bVo.bPeople == '2~3인분'}">selected</c:if>>2~3인분</option>
+				<option <c:if test="${bVo.bPeople == '4~5인분'}">selected</c:if>>4~5인분</option>
+				<option <c:if test="${bVo.bPeople == '6인분이상'}">selected</c:if>>6인분이상</option>
             </select>
-            <select class="reciepe_category">
-            	<option value="0">시간</option>
-	            <option value="1">5분이내</option>
-	            <option value="2">10분이내</option>
-	            <option value="3">30분이내</option>
-	            <option value="4">1~10시간이상</option>
-	            <option value="5">기타</option>
+            <select name="bTime" class="reciepe_category">
+            	<option>시간</option>
+	            <option <c:if test="${bVo.bTime == '5분이내'}">selected</c:if>>5분이내</option>
+	            <option <c:if test="${bVo.bTime == '10분이내'}">selected</c:if>>10분이내</option>
+	            <option <c:if test="${bVo.bTime == '30분이내'}">selected</c:if>>30분이내</option>
+	            <option <c:if test="${bVo.bTime == '1~10시간이상'}">selected</c:if>>1~10시간이상</option>
+	            <option <c:if test="${bVo.bTime == '기타'}">selected</c:if>>기타</option>
             </select></td>
          </tr>
      </table>

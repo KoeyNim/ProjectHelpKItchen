@@ -40,7 +40,19 @@
 </div>
 </section>
 </div>
-
+  <c:forEach var="board" items="${boardList}">
+	<div class="Categorie_box">
+		<div class="Categore_minibox">
+			<a href="HelpkitchenServlet?command=board_view&bNum=${board.bNum}">
+				<input type="hidden" name="bNum" value="${board.bNum}">
+				<img src="${contextRoot}/upload/${board.bImageUrl}">
+			</a>
+		<p class="Categorie_title">[${board.bTitle}]<br>${board.bContent}</p>
+		<p class="Categorie_text1">닉네임 : ${board.bNickName}</p>
+		<p class="Categorie_text2">추천수 : ${board.bVote}<br>조회수 : ${board.bViews}</p>
+		</div>
+	</div>
+</c:forEach>
 <%@ include file="../include/footer.jsp"%>
 </body>
 </html>

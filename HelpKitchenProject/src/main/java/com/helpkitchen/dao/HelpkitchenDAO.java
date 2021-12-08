@@ -333,6 +333,45 @@ public class HelpkitchenDAO {
 		}
 		return list;
 	}
+	
+	//조회수별 정렬
+	public List<BoardVO> selectAllBoardsByViews() {
+		String sql = "select * from board order by b_views desc";
+		
+		List<BoardVO> list = new ArrayList<>();
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		
+		try {
+			conn = DBConnector.getConnection();
+			stmt = conn.createStatement();
+			
+			rs = stmt.executeQuery(sql);
+			
+			while (rs.next()) {
+				BoardVO bVo = new BoardVO();
+				
+				bVo.setbNum(rs.getLong("b_num"));
+				bVo.setbId(rs.getString("b_id"));
+				bVo.setbNickName(rs.getString("b_nickName"));
+				bVo.setbTitle(rs.getString("b_title"));
+				bVo.setbContent(rs.getString("b_content"));
+				bVo.setbCredat(rs.getString("b_credat"));
+				bVo.setbTag(rs.getString("b_Tag"));
+				bVo.setbVote(rs.getLong("b_vote"));
+				bVo.setbViews(rs.getLong("b_views"));
+				bVo.setbImageUrl(rs.getString("b_imageurl"));
+				
+				list.add(bVo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBConnector.close(conn, stmt);
+		}
+		return list;
+	}
 
 	// 11/23 이민혁 최신순으로 게시글 보기
 	public List<BoardVO> selectAllBoards() {
@@ -376,8 +415,8 @@ public class HelpkitchenDAO {
 	// 12/02 이민혁 insert 완료
 	public int insertBoard(BoardVO bVo) {
 		int result = 0;
-		String sql = "INSERT INTO board(B_NUM, B_ID, B_NICKNAME, B_TITLE, B_CONTENT, B_TAG, B_IMAGEURL) "
-				+ "values(sql_board.nextval, ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO board(B_NUM, B_ID, B_NICKNAME, B_TITLE, B_CONTENT, B_TAG, B_IMAGEURL, B_PEOPLE, B_TIME)"
+				+ "values(sql_board.nextval, ?, ?, ?, ?, ?, ?, ?, ?)";
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -392,6 +431,8 @@ public class HelpkitchenDAO {
 			pstmt.setString(4, bVo.getbContent());
 			pstmt.setString(5, bVo.getbTag());
 			pstmt.setString(6, bVo.getbImageUrl());
+			pstmt.setString(7, bVo.getbPeople());
+			pstmt.setString(8, bVo.getbTime());
 			pstmt.executeUpdate();
 			result = 1;
 		} catch (SQLException e) {
@@ -404,7 +445,7 @@ public class HelpkitchenDAO {
 	
 	// 11/23 이민혁
 	public void updateViews(String bNum) {
-		String sql = "update board set views=views+1 where b_num=?";
+		String sql = "update board set b_views=b_views+1 where b_num=?";
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -452,6 +493,8 @@ public class HelpkitchenDAO {
 				bVo.setbVote(rs.getLong("b_vote"));
 				bVo.setbViews(rs.getLong("b_views"));
 				bVo.setbImageUrl(rs.getString("b_imageurl"));
+				bVo.setbPeople(rs.getString("b_people"));
+				bVo.setbTime(rs.getString("b_time"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -464,7 +507,7 @@ public class HelpkitchenDAO {
 	// 12/03 이민혁 수정 구현
 	public int updateBoard(BoardVO bVo) {
 		int result = 0;
-		String sql = "update board set b_title=?, b_content=?, b_Tag=?, b_imageurl=? where b_num=?";
+		String sql = "update board set b_title=?, b_content=?, b_Tag=?, b_imageurl=?, b_people=?, b_time=? where b_num=?";
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -478,8 +521,9 @@ public class HelpkitchenDAO {
 			pstmt.setString(2, bVo.getbContent());
 			pstmt.setString(3, bVo.getbTag());
 			pstmt.setString(4, bVo.getbImageUrl());
-			pstmt.setLong(5, bVo.getbNum());
-			
+			pstmt.setString(5, bVo.getbPeople());
+			pstmt.setString(6, bVo.getbTime());
+			pstmt.setLong(7,bVo.getbNum());
 			pstmt.executeUpdate();
 			result = 1;
 		} catch (SQLException e) {

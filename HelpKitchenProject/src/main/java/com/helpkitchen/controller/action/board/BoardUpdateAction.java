@@ -32,6 +32,8 @@ public class BoardUpdateAction implements Action {
 		String content = multi.getParameter("bContent");
 		String bTag = multi.getParameter("bTag");
 		String bImageUrl = multi.getFilesystemName("bImage");
+		String bPeople = multi.getParameter("bPeople");
+		String bTime = multi.getParameter("bTime");
 		
 		BoardVO bVo = new BoardVO();
 		bVo.setbNum(num);
@@ -39,7 +41,8 @@ public class BoardUpdateAction implements Action {
 		bVo.setbContent(content);
 		bVo.setbTag(bTag);
 		bVo.setbImageUrl(bImageUrl);
-		
+		bVo.setbPeople(bPeople);
+		bVo.setbTime(bTime);
 		HelpkitchenDAO hDao = HelpkitchenDAO.getInstance();
 		int result = hDao.updateBoard(bVo);
 		System.out.println(result);
