@@ -43,12 +43,12 @@ table {width: 50%; margin: 0 auto;}
 						</tr>
 					</table>
 				</div>
-				<br>
+				<br><br><br><br><br><br>
 				<div>
-					<h3>조리순서
+					<h4>레시피
 						<br><br>
 						<pre>${bVo.bContent}</pre>
-					</h3>
+					</h4>
 				</div>
 				<br>
 				<div>

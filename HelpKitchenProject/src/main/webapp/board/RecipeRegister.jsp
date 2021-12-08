@@ -8,32 +8,6 @@
 <head>
 <meta charset="UTF-8">
 <title>요리레시피등록하기</title>
-<link rel="stylesheet" type="text/css" href="${contextRoot}/css/Recipedesign.css">
-<script type="text/javascript" src="${contextRoot}/js/RegisterCheck.js"></script>
-<script>
-function readURL(input) {
-	  if (input.files && input.files[0]) {
-	    var reader = new FileReader();
-	    reader.onload = function(e) {
-	      document.getElementById('mainPhotoHolder').src = e.target.result;
-	    };
-	    reader.readAsDataURL(input.files[0]);
-	  } else {
-	    document.getElementById('mainPhotoHolder').src = "https://recipe1.ezmember.co.kr/img/pic_none4.gif";
-	  }
-	}
-	
-
-/* textarea 의 줄바꿈 부분을 <br/>로 변경 */
-var str = document.getElementById("textarea").value;
-str = str.replace(/(?:\r\n|\r|\n)/g, '<br/>');
-document.getElementById("textarea").value = str;
-/* <br/> 부분 줄바꿈 변경 */
-var str = document.getElementById("textarea").value;
-str = str.replaceAll("<br/>", "\r\n");
-document.getElementById("textarea").value = str;
-
-</script>
 </head>
 <body>
 <h2 style="margin: 2% auto">레시피 등록</h2>
@@ -49,7 +23,9 @@ document.getElementById("textarea").value = str;
         
         <tr>
             <td>요리소개</td>
-            <td><textarea name="bContent"></textarea></td>
+            <td>
+            <textarea name="bContent" id="summernote"></textarea>
+            </td>
         </tr>
         <tr>
             <div class="register_filebox">
@@ -98,14 +74,14 @@ document.getElementById("textarea").value = str;
         <tr>
             <td>요리정보</td>
             <td>
-            <select name="" class="reciepe_category">
+            <select name="b_people" class="reciepe_category">
 				<option value="0">인원</option>
 				<option value="1">1~2인분</option>
 				<option value="2">2~3인분</option>
 				<option value="3">4~5인분</option>
 				<option value="4">6인분이상</option>
             </select>
-            <select name="" class="reciepe_category">
+            <select name="b_time" class="reciepe_category">
             	<option value="0">시간</option>
 	            <option value="1">5분이내</option>
 	            <option value="2">10분이내</option>

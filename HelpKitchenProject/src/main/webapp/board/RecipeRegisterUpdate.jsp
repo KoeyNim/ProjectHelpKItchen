@@ -8,21 +8,6 @@
 <head>
 <meta charset="UTF-8">
 <title>요리레시피등록하기</title>
-<link rel="stylesheet" type="text/css" href="${contextRoot}/css/Recipedesign.css">
-<script type="text/javascript" src="${contextRoot}/js/RegisterCheck.js"></script>
-<script>
-function readURL(input) {
-	  if (input.files && input.files[0]) {
-	    var reader = new FileReader();
-	    reader.onload = function(e) {
-	      document.getElementById('mainPhotoHolder').src = e.target.result;
-	    };
-	    reader.readAsDataURL(input.files[0]);
-	  } else {
-	    document.getElementById('mainPhotoHolder').src = "https://recipe1.ezmember.co.kr/img/pic_none4.gif";
-	  }
-	}
-</script>
 </head>
 <body>
 <h2 style="margin: 2% auto">레시피 등록</h2>
@@ -38,7 +23,9 @@ function readURL(input) {
         
         <tr>
             <td>요리소개</td>
-            <td><textarea name="bContent">${bVo.bContent}</textarea></td>
+            <td>
+            <textarea name="bContent" id="summernote">${bVo.bContent}</textarea>
+            </td>
         </tr>
         <tr>
             <div class="register_filebox">
