@@ -6,15 +6,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
-<style>
+<!-- <style>
 .details {margin-top: 3%; margin-bottom: 3%}
 .col-xl-10 {background-color: #F8F8FF; text-align:center;}
 .previous {display: flex; justify-content: center;}
 li {display: inline; margin: 0 5%;}
 table {width: 50%; margin: 0 auto;}
-</style>
+.btn-area3 button {width: 100px; height: 40px; background: #ffc107; border: none; border-radius: 0.25rem;}
+</style> -->
 <body>
 <%@ include file="../include/header.jsp"%>
 <%@ include file="../include/nav.jsp"%>

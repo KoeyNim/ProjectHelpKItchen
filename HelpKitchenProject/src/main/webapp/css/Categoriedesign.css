@@ -52,16 +52,12 @@
     border-radius: 20px;
 }
 
-.Categorie_text{
-	font-size:30px;
-	color:red;
-}
-
 .Categorie_box {
-    display: flex;
-     justify-content: center;
-     gap: 30px;
-     margin-bottom: 30px;
+	display: flex; 
+	justify-content: center; 
+	gap: 50px; 
+	margin-bottom: 30px; 
+	flex-wrap: wrap;
  }
  .Categorie_header {
      margin: 30px 0;
@@ -96,3 +92,15 @@
  .Categorie_minibox img {
      margin-bottom: 10px;
  }
+.accordion-button {
+	color: black;
+	font-weight: bold;
+}
+.accordion-button:not(.collapsed) {
+	color: black;
+	font-weight: bold;
+	background-color: #198754;
+}
+.accordion-button:focus {
+	display:none;
+}

@@ -1,4 +1,8 @@
 @charset "UTF-8";
+
+a {
+	text-decoration-line: none;
+}
 .login_header {
 	height: 20vh;
 }
@@ -90,6 +94,12 @@ ul .nav justify-content-center {
 	border-radius: 0.25rem;
 }
 
+.details {margin-top: 3%; margin-bottom: 3%}
+.col-xl-10 {background-color: #F8F8FF; text-align:center;}
+.previous {display: flex; justify-content: center;}
+li {display: inline; margin: 0 5%;}
+table {width: 50%; margin: 0 auto;}
+
 /* swiper styles */
 html, body {
 	position: relative;
@@ -107,7 +117,8 @@ body {
 
 .swiper {
 	width: 70%;
-	height: 25%;
+	height: auto;
+	margin-top:2%;
 }
 .swiper-slide {
 	text-align: center;
@@ -128,3 +139,20 @@ body {
 	align-items: center;
 }
 
+.swiper-button-next:after, 
+.swiper-button-prev:after {
+	color: #198754;
+}
+
+.swiper mySwiper {
+	margin: 30px auto;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal, 
+.swiper-pagination-custom, .swiper-pagination-fraction {
+	display:none;
+}
+.m_title {
+	color:black;
+}
