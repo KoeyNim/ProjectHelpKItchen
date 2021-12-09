@@ -40,7 +40,7 @@
 						</div>
 					</div>
 					<div class="Categorietable_row2">
-						<span class="cell col7">상황별</span>
+						<span class="cell col1">상황별</span>
 						<span class="cell col8">전체</span>
 						<span class="cell col9">일상</span>
 						<span class="cell col10">간식</span>
@@ -48,7 +48,7 @@
 						<span class="cell col12">다이어트</span>
 					</div>
 					<div class="Categorietable_row3">
-						<span class="cell col13">재료별</span>
+						<span class="cell col1">재료별</span>
 						<span class="cell col14">전체</span>
 						<span class="cell col15">고기류/해물류</span>
 						<span class="cell col16">채소류/가공식품류</span>
@@ -56,7 +56,7 @@
 						<span class="cell col18">건어물류/견과류</span>
 					</div>
 					<div class="Categorietable_row4">
-						<span class="cell col19">방법별</span>
+						<span class="cell col1">방법별</span>
 						<span class="cell col20">전체</span>
 						<span class="cell col21">볶음/조리</span>
 						<span class="cell col22">무침/부침/비빔</span>
@@ -64,7 +64,7 @@
 						<span class="cell col24">삶기/데침/찜</span>
 					</div>
 					<div class="Categorietable_row5">
-						<span class="cell col25">테마별</span>
+						<span class="cell col1">테마별</span>
 						<span class="cell col26">여성/뷰티</span>
 						<span class="cell col27">엄마/아기</span>
 						<span class="cell col28">건강/질병</span>
@@ -82,7 +82,7 @@
 <!-- 틀만 잡아주면 끝 -->
 	<div class="Categorie_box">
 <c:forEach var="board" items="${boardList}">
-		<div class="Categore_minibox">
+		<div class="Categorie_minibox">
 			<a href="HelpkitchenServlet?command=board_view&bNum=${board.bNum}">
 				<input type="hidden" name="bNum" value="${board.bNum}">
 				<img src="${contextRoot}/upload/${board.bImageUrl}" width="300px" height="300px">

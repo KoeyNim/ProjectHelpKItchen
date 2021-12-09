@@ -8,6 +8,8 @@
 <head>
 <meta charset="UTF-8">
 <title>요리레시피등록하기</title>
+<link rel="stylesheet" type="text/css" href="${contextRoot}/css/Recipedesign.css?after">
+<script type="text/javascript" src="${contextRoot}/js/RegisterCheck.js"></script>
 </head>
 <body>
 <h2 style="margin: 2% auto">레시피 등록</h2>

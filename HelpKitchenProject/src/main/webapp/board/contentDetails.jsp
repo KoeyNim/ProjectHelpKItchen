@@ -7,14 +7,6 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<!-- <style>
-.details {margin-top: 3%; margin-bottom: 3%}
-.col-xl-10 {background-color: #F8F8FF; text-align:center;}
-.previous {display: flex; justify-content: center;}
-li {display: inline; margin: 0 5%;}
-table {width: 50%; margin: 0 auto;}
-.btn-area3 button {width: 100px; height: 40px; background: #ffc107; border: none; border-radius: 0.25rem;}
-</style> -->
 <body>
 <%@ include file="../include/header.jsp"%>
 <%@ include file="../include/nav.jsp"%>
@@ -24,7 +16,7 @@ table {width: 50%; margin: 0 auto;}
 			<div class="col-sm-1"></div>
 			<div class="col-xl-10">
 				<div>
-					<img src="${contextRoot}/upload/${bVo.bImageUrl}" alt="대표사진" width="50%" height="50%">
+					<img src="${contextRoot}/upload/${bVo.bImageUrl}" alt="대표사진" style="width:40%; height:30%; margin-top:1%">
 				</div>
 				<br>
 				<div>
@@ -43,9 +35,9 @@ table {width: 50%; margin: 0 auto;}
 						</tr>
 					</table>
 				</div>
-				<br><br><br><br><br><br>
+				<br><br>
 				<div>
-					<h4>레시피
+					<h4><strong>~레시피~</strong>
 						<br><br>
 						<pre>${bVo.bContent}</pre>
 					</h4>

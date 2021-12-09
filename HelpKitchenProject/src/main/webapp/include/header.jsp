@@ -15,11 +15,6 @@
 .container {max-width: 90%;}
 .img-thumbnail {border: 1px solid #fff;}
 .bg-light {background-color: #fff !important;}
-.btn-area2 button {width: 100px; height: 40px;
-	background: #ffc107;
-	border: none;
-	border-radius: 0.25rem;
-}
 </style>
 <title>Insert title here</title>
 </head>
@@ -44,7 +39,7 @@
  </c:when>
  <c:when test="${mVo != null}">
 <!-- 로그인이 되어있는경우 나오는 화면  -->
-<div>환영합니다! ${mVo.mNickName} 님</div>
+<div style="font-weight:bold">환영합니다! ${mVo.mNickName} 님</div>
 	<div class="btn-area2">
 		<button value="로그아웃" onclick="location.href='HelpkitchenServlet?command=member_logout'">로그아웃</button>
 		<button value="레시피 작성" onclick="location.href='HelpkitchenServlet?command=board_write_form'">레시피 작성</button>

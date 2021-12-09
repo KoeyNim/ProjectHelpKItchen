@@ -5,6 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+.btn-primary {
+	background-color: white;
+    border-color: #198754;
+    color: #198754;
+}
+</style>
 </head>
 
 <div class="container">

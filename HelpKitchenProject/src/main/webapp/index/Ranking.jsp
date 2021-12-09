@@ -7,17 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>메인, 랭킹</title>
-<link rel="stylesheet" type="text/css" href='${contextRoot}/css/Rankingdesign.css?after'>
-<style>
-/* input[type="radio"] {display:none;}
-input[type="radio"] + label {display:inline-block;padding:15px;background:#ccc;border-radius:0.25rem;color:#999;cursor:pointer;margin-bottom:1%;}
-input[type="radio"]:checked + label {background:#ffc107;border-radius: 0.25rem;color:#000; width:10%}
-.conbox {background:white;margin:0 auto;display:none;}
-input[id="tab01"]:checked ~ .con1 {display:block;}
-input[id="tab02"]:checked ~ .con2 {display:block;}
-input[id="tab03"]:checked ~ .con3 {display:block;}
-#tab01 {margin-left: 3%} */
-</style>
+<link rel="stylesheet" type="text/css" href='${contextRoot}/css/Rankingdesign.css?after'/>
 </head>
 <body>
 
@@ -36,7 +26,6 @@ input[id="tab03"]:checked ~ .con3 {display:block;}
 				<c:forEach var="board" items="${boardList}" varStatus="status">
 					<div class="Ranking_minibox">
 						<p class="Ranking_number" style="background: white; border: 1px solid black;">
-							<!-- ranking count 가능? -->
 							<b>${status.count}</b>
 						</p>
 						<a href="HelpkitchenServlet?command=board_view&bNum=${board.bNum}">
@@ -60,7 +49,6 @@ input[id="tab03"]:checked ~ .con3 {display:block;}
 				<c:forEach var="board" items="${boardList}">
 					<div class="Ranking_minibox">
 						<p class="Ranking_number" style="background: white; border: 1px solid black;">
-							<!-- ranking count 가능? -->
 							<b>${board.bNum}</b>
 						</p>
 						<a href="HelpkitchenServlet?command=board_view&bNum=${board.bNum}">
@@ -83,7 +71,6 @@ input[id="tab03"]:checked ~ .con3 {display:block;}
 				<c:forEach var="board" items="${boardList}">
 					<div class="Ranking_minibox">
 						<p class="Ranking_number" style="background: white; border: 1px solid black;">
-							<!-- ranking count 가능? -->
 							<b>${board.bNum}</b>
 						</p>
 						<a href="HelpkitchenServlet?command=board_view&bNum=${board.bNum}">

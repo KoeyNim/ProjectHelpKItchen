@@ -25,7 +25,7 @@ h2{
 
 .register_table td{
 	padding: 10px;
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: bold;
 	color: gray;
 	height: 100px;
@@ -66,7 +66,7 @@ h2{
 }
 
 .register_btn{
-	font-size: 14px;
+	font-size: 18px;
 	padding: 15px 30px;
 	background-color: #ffc107;
 	color: black;

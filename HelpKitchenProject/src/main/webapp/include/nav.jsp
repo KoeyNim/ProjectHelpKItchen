@@ -6,9 +6,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="${contextRoot}/css/Recipedesign.css?after">
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-<script type="text/javascript" src="${contextRoot}/js/RegisterCheck.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script>
@@ -34,12 +35,7 @@ $(document).ready(function() {
 </script>
 	
 <style>
-a {color: black;}
-.nav-link {
-color: black;
-font-size: 25px;
-font-weight: 1000;
-}
+a {color: black; font-family: 'Gamja Flower', cursive;}
 .col {
 background-color: #ffc107;
 }
