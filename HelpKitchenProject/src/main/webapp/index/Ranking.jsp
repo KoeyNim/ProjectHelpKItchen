@@ -33,11 +33,11 @@ input[id="tab03"]:checked ~ .con3 {display:block;}
 
 		<div class="conbox con1">
 			<div class="Ranking_box" style="display: flex; justify-content: center; gap: 50px; margin-bottom: 30px; flex-wrap: wrap;">
-				<c:forEach var="board" items="${boardList}">
+				<c:forEach var="board" items="${boardList}" varStatus="status">
 					<div class="Ranking_minibox">
 						<p class="Ranking_number" style="background: white; border: 1px solid black;">
 							<!-- ranking count 가능? -->
-							<b>${board.bNum}</b>
+							<b>${status.count}</b>
 						</p>
 						<a href="HelpkitchenServlet?command=board_view&bNum=${board.bNum}">
 							<input type="hidden" name="bNum" value="${board.bNum}">

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="com.helpkitchen.dao.HelpkitchenDAO" %>
+<%@ page import="com.helpkitchen.controller.action.help.HelpKitchenMainAction" %>
 <%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
@@ -10,8 +10,6 @@
 </head>
 <body>
 <%
-
-RequestDispatcher dispatcher = request.getRequestDispatcher("/index/main.jsp");
-dispatcher.forward(request, response);%>
+new HelpKitchenMainAction().execute(request, response);%>
 </body>
 </html>
